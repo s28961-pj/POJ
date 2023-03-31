@@ -22,6 +22,8 @@ public class Main {
         // 2) arytmetycznych,
         // 3) relacyjnych.
         Zadanie2_5 myObject5 = new Zadanie2_5();
-        myObject5;
+        myObject5.printIncrAndDecr();
+        myObject5.printArithmetic();
+        myObject5.printRelation();
     }
 }
