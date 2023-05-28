@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.Scanner; // importuje bibliotekę Scanner do wprowadzania danych
 public class Zjazd1 {
         public static void main(String[] args){
@@ -7,7 +10,6 @@ public class Zjazd1 {
 
             // Zadanie 1
             /*
-            // System.out.println() - drukuje w konsoli zawartość z nową linią na końcu
             System.out.println("**Zadanie 1**\n" +
                     "Napisz program, który obliczy pole prostokąta o bokach a i b, wprowadzonych wcześniej przez użytkownika (każda wartość będzie znajdować się w osobnej linii).");
 
@@ -75,9 +77,7 @@ public class Zjazd1 {
                 }
             } else {
                 System.out.println("BŁĄD");
-            }
-
-             */
+            } */
 
             // Zadanie 5
             /*
@@ -143,11 +143,10 @@ public class Zjazd1 {
                 default: {
                     System.out.println("BŁĄD");
                 }
-            }
-
-             */
+            } */
 
             // Zadanie 6
+            /*
             System.out.println("**Zadanie 6**\n" +
                     "Napisz program, który pobierze trzy liczby rzeczywiste, a następnie wyświetli je w kolejności od najmniejszej do największej, " +
                     "a potem od największej do najmniejszej. Nie używaj tutaj żadnych dostępnych metod sortujących.\n" +
@@ -159,12 +158,25 @@ public class Zjazd1 {
             double a = sc.nextDouble();
             double b = sc.nextDouble();
             double c = sc.nextDouble();
-            double min = Math.min(Math.min(a, b),c);
-            double max = Math.max(Math.max(a, b),c);
-            System.out.println(min + " " + max);
+            ArrayList<Double> myList = new ArrayList<>();
+            myList.add(a);
+            myList.add(b);
+            myList.add(c);
+            Collections.sort(myList);
+            System.out.println("Ascending list: ");
+            for (double x: myList) {
+                System.out.print(String.format("%.6f", x) + " ");
+            }
+
+            System.out.println("\nDescending list: ");
+            Collections.reverse(myList);
+            for (double x: myList) {
+                System.out.print(String.format("%.6f", x) + " ");
+            } */
 
             // Zadanie 7
-            /* System.out.println("**Zadanie 7**\n" +
+            /*
+            System.out.println("**Zadanie 7**\n" +
                     "Napisz program, który zadeklaruje dwie tablice typu int, następnie wczyta liczby naturalne n i m, wczyta do pierwszej tablicy n liczb, następnie wczyta m liczb do drugiej tablicy (wcześniej trzeba te tablice utworzyć), a następnie wykona iloczyn skalarny tych tablic zgodnie z wzorem:\n" +
                     "$$\\sum_{i=1}^{n} A[i] \\cdot B[i]$$\n" +
                     "Zastanów się, co w przypadku gdy n<m lub m<n.\n" +
@@ -174,10 +186,45 @@ public class Zjazd1 {
                     "1 1\n" +
                     "2 2\n" +
                     "WYJŚCIE:\n" +
-                    "4"); */
+                    "4");
+
+            System.out.println("Podaj 2 liczby naturalne n i m: ");
+            int n = sc.nextInt();
+            if (n <= 0) {
+                System.out.println("BŁĄD");
+                System.exit(0);
+            }
+            int[] arr1 = new int[n];
+
+            int m = sc.nextInt();
+            if (m != n) {
+                System.out.println("BŁĄD");
+                System.exit(0);
+            }
+            int[] arr2 = new int[m];
+
+            System.out.println("Wprowadź liczby do tablicy1: ");
+            for (int i = 0; i < n; i++) {
+                arr1[i] = sc.nextInt();
+            }
+
+            System.out.println("Wprowadź liczby do tablicy2: ");
+            for (int i = 0; i < m; i++) {
+                arr2[i] = sc.nextInt();
+            }
+
+            int result = 0;
+            for (int i = 0; i < n; i++) {
+                result += arr1[i] * arr2[i];
+            }
+
+            System.out.println("Iloczyn skalarny wynosi: ");
+            System.out.print(result); */
+
 
             // Zadanie 8
-            /* System.out.println("**Zadanie 8**\n" +
+            /*
+            System.out.println("**Zadanie 8**\n" +
                     "Napisz program, który dla liczby naturalnej n wypisze poniższe wzory (jeden pod drugim).\n" +
                     "W przypadku niepoprawnych danych program ma ponownie je wczytać.\n" +
                     "Zakładamy, że na końcu linii jest wyłącznie znak nowej linii.\n" +
@@ -195,10 +242,53 @@ public class Zjazd1 {
                     "  *\n" +
                     "  *\n" +
                     " **\n" +
-                    "***  "); */
+                    "***  ");
+
+            System.out.print("Podaj liczbe naturalną: ");
+            int a = sc.nextInt();
+            while (a <= 0 ) {
+                System.out.print("Błąd. Spróbuj ponownie: ");
+                a = sc.nextInt();
+            }
+            String result = "*";
+
+            for (int i = 0; i < a; i++) {
+                System.out.println();
+                for (int j = 0; j <= i; j++) {
+                    System.out.print(result);
+                }
+            }
+            for (int i = a; i > 0; i--) {
+                System.out.println();
+                for (int j = i; j > 0; j--) {
+                    System.out.print(result);
+                }
+            }
+            System.out.println();
+
+            for (int i = a; i >= 1; i--) {
+                for (int j = 1; j <= a - i; j++) {
+                    System.out.print(" ");
+                }
+                for (int j = 1; j <= i; j++) {
+                    System.out.print("*");
+                }
+                System.out.println();
+            }
+            for (int i = a; i >= 1; i--) {
+                for (int j = 2; j <= i; j++) {
+                    System.out.print(" ");
+                }
+                for (int j = 0; j <= a - i; j++) {
+                    System.out.print("*");
+                }
+                System.out.println();
+            } */
+
 
             // Zadanie 9
-            /*System.out.println("**Zadanie 9**\n" +
+            /*
+            System.out.println("**Zadanie 9**\n" +
                     "Napisz funkcje, a następnie program, który sprawdzi czy dane słowo jest palindromem.\n" +
                     "Palindrom to słowo, które zapisane wspak jest takim samym słowem.\n" +
                     "Przykładem palindromu jest słowo: kajak.\n" +
@@ -208,10 +298,25 @@ public class Zjazd1 {
                     ">WEJŚCIE:\n" +
                     "kajak\n" +
                     "WYJŚCIE:\n" +
-                    "TAK"); */
+                    "TAK");
+
+            System.out.print("Podaj słowo: ");
+            char[] input = sc.nextLine().toCharArray();
+
+            for (int i = 0; i < input.length; i++) {
+                if (input[i] == input[input.length-1-i]) {
+                    System.out.println("TAK");
+                    break;
+                } else {
+                    System.out.println("NIE");
+                    break;
+                }
+            } */
+
 
             // Zadanie 10
-            /*System.out.println("**Zadanie 10**\n" +
+            /*
+            System.out.println("**Zadanie 10**\n" +
                     "Napisz program, który będzie miał utworzoną statycznie tablicę dwuwymiarową o wymiarach $$a \\times b$$.\n" +
                     "Następnie program ma pobrać od użytkownika liczby a i b, które mają oznaczać ilość wierszy oraz kolumn tablicy.\n" +
                     "Następnie ma pobrać a×b liczb i wypisać transpozycję tej macierzy (patrz poniższy test).\n" +
@@ -227,10 +332,29 @@ public class Zjazd1 {
                     "11 90\n" +
                     "WYJŚCIE:\n" +
                     "95 100 77 94 2 11\n" +
-                    "89 10 19 59 91 90"); */
+                    "89 10 19 59 91 90");
 
-            // Zadanie 11
-            /* System.out.println("**Zadanie 11**\n" +
+            System.out.print("Podaj wymiary tablicy a x b: ");
+            int a = sc.nextInt();
+            int b = sc.nextInt();
+            int[][] input = new int[a][b];
+
+            System.out.println("Uzupełnij tablicę (macierz) liczbami: ");
+            for (int i = 0; i < a; i++) {
+                for (int j = 0; j < b; j++) {
+                    input[i][j] = sc.nextInt();
+                }
+            }
+            for (int i = 0; i < b; i++) {
+                for (int j = 0; j < a; j++) {
+                    System.out.print(input[j][i] + " ");
+                }
+                System.out.println();
+            } */
+
+            // Zadanie 11 - nie działa
+            /*
+            System.out.println("**Zadanie 11**\n" +
                     "Pangramem nazywamy tekst, w którym każda litera alfabetu łacińskiego występuje przy najmniej raz.\n" +
                     "Najpopularniejszym pangramem w języku angielskim jest zdanie:\n" +
                     "The quick brown fox jumps over the lazy dog.\n" +
@@ -240,7 +364,27 @@ public class Zjazd1 {
                     ">WEJŚCIE:\n" +
                     "The quick brown fox jumps over the lazy dog\n" +
                     "WYJŚCIE:\n" +
-                    "true\n"); */
+                    "true\n");
+
+            String alphabetLetters = "Abcdefghijklmnopqrstuvwxyz";
+            alphabetLetters.toLowerCase();
+            System.out.println("Podaj słowo: ");
+            String input = sc.nextLine().toLowerCase();
+
+            boolean isPangram = false;
+
+            for (int i = 0; i <= 3; i++) {
+                System.out.println(i);
+                // indexOf(int i) - returns '-1' when substring not found
+                if( input.indexOf( alphabetLetters.charAt(i) ) != -1 ) {
+                    isPangram = true;
+                } else {
+                    isPangram = false;
+                    break;
+                }
+            }
+
+            System.out.println(isPangram); */
 
             // Zadanie 12
             /* System.out.println("**Zadanie 12**\n" +
@@ -274,11 +418,17 @@ public class Zjazd1 {
 
             // Zadanie 14
             /* System.out.println("**Zadanie 14**\n" +
-                    "Dowolne zadanie skompiluj i uruchom przy pomocy narzędzi javac oraz java."); */
+                    "Dowolne zadanie skompiluj i uruchom przy pomocy narzędzi javac oraz java.");
+
+            System.out.println("javac Zjazd1.java");
+            System.out.println("java Zjazd1"); */
+
 
             // Zadanie 15
             /* System.out.println("**Zadanie 15** \n" +
-                    "Wrzuć zadania do wskazanego repozytorium w serwisie github.com pod adresem: link_do_repozytorium."); */
+                    "Wrzuć zadania do wskazanego repozytorium w serwisie github.com pod adresem: link_do_repozytorium.");
 
+            String link = "https://github.com/s28961-pj/POJ/tree/main/Zjazd1";
+            System.out.println(link); */
         }
 }
