@@ -1,34 +1,42 @@
-enum hotLevel {
-    Mild,
-    Medium,
-    Hot
+enum HotLevel {
+    MILD,
+    MEDIUM,
+    HOT
 }
+
 public class Pizza {
 
     // Fields
-    private String _pizzaName;
-    private String[] _ingredients;
-    private hotLevel hotLevel;
-    //private _price
+    private String _pizzaType;
+    private String _ingredients;
+    private HotLevel _hotLevel;
 
 
     // Constructor
-    public Pizza(String pizzaName) {
-        _pizzaName = pizzaName;
+    public Pizza(String pizzaType, HotLevel hotLevel, String ingredients) {
+        this._pizzaType = pizzaType;
+        this._hotLevel = hotLevel;
+        this._ingredients = "(" + ingredients + ")";
     }
 
 
     // Methods
-    public void set_pizzaName(String _pizzaName) {
-        this._pizzaName = _pizzaName;
+    public void set_pizzaType(String pizzaType) {
+        this._pizzaType = pizzaType;
     }
-    public String get_pizzaName() {
-        return _pizzaName;
+    public String get_pizzaType() {
+        return _pizzaType;
     }
-    public void setHotLevel(hotLevel level) {
-        this.hotLevel = level;
+    public void setHotLevel(HotLevel level) {
+        _hotLevel = level;
     }
-    public hotLevel getHotLevel() {
-        return hotLevel;
+    public HotLevel getHotLevel() {
+        return _hotLevel;
+    }
+    public void set_ingredients(String ingredients) {
+        this._ingredients = "( " + ingredients + " )";
+    }
+    public String get_ingredients() {
+        return _ingredients;
     }
 }
