@@ -5,7 +5,7 @@ public class Customer {
     // Fields
     private final String _id = UUID.randomUUID().toString();  // Losowy ID
     private String _customerName;
-    private String address;
+    private String _address;
 
 
     // Constructor
@@ -25,9 +25,9 @@ public class Customer {
         return _id;
     }
     public void setAddress(String address) {
-        this.address = address;
+        this._address = address;
     }
     public String getAddress() {
-        return address;
+        return _address;
     }
 }

@@ -26,6 +26,7 @@ public class Pricing {
                         break;
                     }
                 }
+                break;
             }
             case "Capriciosa": {
                 switch (pizzaSize) {
@@ -42,6 +43,7 @@ public class Pricing {
                         break;
                     }
                 }
+                break;
             }
             case "Pepperoni": {
                 switch (pizzaSize) {
@@ -58,6 +60,7 @@ public class Pricing {
                         break;
                     }
                 }
+                break;
             }
         }
         return price;
