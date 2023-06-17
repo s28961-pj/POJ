@@ -1,3 +1,4 @@
+
 public class Main {
     public static void main(String[] args) {
 
@@ -21,9 +22,24 @@ public class Main {
         // 1) Inkrementacji i dekrementacji,
         // 2) arytmetycznych,
         // 3) relacyjnych.
-        Zadanie2_5 myObject5 = new Zadanie2_5();
-        myObject5.printIncrAndDecr();
-        myObject5.printArithmetic();
-        myObject5.printRelation();
+        // Zadanie2_5 myObject5 = new Zadanie2_5();
+        // myObject5.printIncrAndDecr();
+        // myObject5.printArithmetic();
+        // myObject5.printRelation();
+
+//        Zadanie2_6 myObject6 = new Zadanie2_6();
+//        myObject6.printArray();
+
+//        Zadanie2_7 myObject7 = new Zadanie2_7();
+//        myObject7.cylinderVolume();
+
+//        Zadanie2_8 myObject8 = new Zadanie2_8();
+//        myObject8.printTable();
+
+//        Zadanie2_9 myObject9 = new Zadanie2_9();
+//        myObject9.playGame();
+
+//        Zadanie2_10 myObject10 = new Zadanie2_10();
+//        myObject10.printPower();
     }
 }

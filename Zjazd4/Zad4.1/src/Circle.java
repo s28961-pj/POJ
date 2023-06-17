@@ -17,6 +17,6 @@ public class Circle {
         return area;
     }
     public String toString() {
-        return "Radius: %s, color: %s, area: %s".formatted(radius, getArea(), color);
+        return "Radius: %s, color: %s, area: %s".formatted(radius, color, getArea());
     }
 }
